@@ -137,6 +137,7 @@
       <div class="section">
         <h2>Competitions & Awards</h2>
         <ul>
+          <li>China Women's Development Foundation – Samsung STEM Girls Program: Future Tech Female Leader (2022)</li>
           <li>[Competition Name]: [Award] ([Time])</li>
         </ul>
       </div>
@@ -211,6 +212,7 @@
       <div class="section">
         <h2>竞赛与奖项</h2>
         <ul>
+          <li>中国妇女发展基金会-三星“探知未来科技女性培养计划”：未来科技女性领袖（2022年）</li>
           <li>[竞赛名称]：[奖项]（[时间]）</li>
         </ul>
       </div>
@@ -250,12 +252,16 @@
     function toggleLanguage() {
       const en = document.querySelector(".en");
       const zh = document.querySelector(".zh");
+      const btn = document.querySelector(".lang-toggle");
+
       if (en.style.display !== "none") {
         en.style.display = "none";
         zh.style.display = "block";
+        btn.textContent = "🌐 语言";
       } else {
         en.style.display = "block";
         zh.style.display = "none";
+        btn.textContent = "🌐 Language";
       }
     }
   </script>
