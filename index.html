@@ -103,10 +103,12 @@
     .hero .intro h1 {
       margin-top: 0;
       color: rgb(0, 63, 67); /* 主色标题 */
+      margin-bottom: 10px; /* 减小标题下方间距 */
     }
     .hero .intro p {
       font-size: 1.15rem;
-      margin-top: 8px;
+      margin-top: 0; /* 移除段落上方默认间距 */
+      margin-bottom: 8px; /* 减小段落下方间距 */
     }
 
     /* Section titles */
@@ -216,18 +218,18 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- 导航栏 -->
   <nav>
-    <a href="#home" class="nav-link active">Home</a>
-    <a href="#education" class="nav-link">Education</a>
-    <a href="#research" class="nav-link">Research</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#awards" class="nav-link">Awards</a>
-    <a href="#activities" class="nav-link">Activities</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#home" class="nav-link active" data-en="Home" data-zh="首页">Home</a>
+    <a href="#education" class="nav-link" data-en="Education" data-zh="教育经历">Education</a>
+    <a href="#research" class="nav-link" data-en="Research" data-zh="研究方向">Research</a>
+    <a href="#projects" class="nav-link" data-en="Projects" data-zh="项目经历">Projects</a>
+    <a href="#awards" class="nav-link" data-en="Awards" data-zh="获奖荣誉">Awards</a>
+    <a href="#activities" class="nav-link" data-en="Activities" data-zh="课外活动">Activities</a>
+    <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系方式">Contact</a>
   </nav>
 
-  <!-- Language toggle -->
+  <!-- 语言切换按钮 -->
   <button id="langToggle" aria-label="Toggle Language">中文</button>
 
   <div class="container">
@@ -452,23 +454,35 @@
   </div>
 
 <script>
-  // Language toggle
+  // 语言切换功能
   const langToggleBtn = document.getElementById('langToggle');
   const enEls = document.querySelectorAll('.en');
   const zhEls = document.querySelectorAll('.zh');
+  const navLinks = document.querySelectorAll('nav a');
 
   function showLanguage(lang) {
     if (lang === 'zh') {
+      // 显示中文内容
       zhEls.forEach(el => el.style.display = 'block');
       enEls.forEach(el => el.style.display = 'none');
-      langToggleBtn.textContent = 'English';
+      langToggleBtn.textContent = 'EN'; // 改为EN而非English
+      // 更新导航栏为中文
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute('data-zh');
+      });
     } else {
+      // 显示英文内容
       zhEls.forEach(el => el.style.display = 'none');
       enEls.forEach(el => el.style.display = 'block');
       langToggleBtn.textContent = '中文';
+      // 更新导航栏为英文
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute('data-en');
+      });
     }
   }
 
+  // 语言切换事件
   langToggleBtn.addEventListener('click', () => {
     if (zhEls[0].style.display === 'block') {
       showLanguage('en');
@@ -477,11 +491,10 @@
     }
   });
 
-  // Default show English on load
+  // 默认显示英文
   showLanguage('en');
 
-  // Smooth scroll for nav links + active link highlight
-  const navLinks = document.querySelectorAll('nav a');
+  // 平滑滚动和导航激活状态功能
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -493,9 +506,8 @@
     });
   });
 
-   // Update active nav link on scroll
   window.addEventListener('scroll', () => {
-    let fromTop = window.scrollY + 100; // 偏移调整，避免导航挡住内容
+    let fromTop = window.scrollY + 100;
     navLinks.forEach(link => {
       const section = document.querySelector(link.hash);
       if (
