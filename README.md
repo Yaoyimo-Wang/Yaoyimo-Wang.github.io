@@ -1,7 +1,7 @@
-# Yaoyimo Wang's Personal Website
+# Yimo WangYao's Personal Website
 
 ## Introduction
-This is the bilingual personal website of Yaoyimo (Suri) Wang, a student at the Southern University of Science and Technology, Class of 2028, majoring in Statistics. This site is built with simple HTML and CSS, containing both English and Chinese versions of her academic and extracurricular background.
+This is the bilingual personal website of Yimo (Suri) WangYao, a student at the Southern University of Science and Technology, Class of 2028, majoring in Statistics. This site is built with simple HTML and CSS, containing both English and Chinese versions of her academic and extracurricular background.
 
 ## Structure
 - `index.html`: Main homepage file, includes both English and Chinese versions of all sections.
@@ -27,7 +27,7 @@ Feel free to update:
 # 王姚以沫的个人主页
 
 ## 简介
-这是南方科技大学2028届统计学专业学生王姚以沫（Suri Wang）的双语个人主页，采用纯HTML和CSS构建，包含她的学术背景与课外经历的中英文介绍。
+这是南方科技大学2028届统计学专业学生王姚以沫（Suri WangYao）的双语个人主页，采用纯HTML和CSS构建，包含她的学术背景与课外经历的中英文介绍。
 
 ## 结构
 - `index.html`：主页面文件，包含中英文双语内容
